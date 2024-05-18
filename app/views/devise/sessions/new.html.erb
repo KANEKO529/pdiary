@@ -1,0 +1,32 @@
+<!-- ログイン画面-->
+<h2>Log in</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
+  <div class="field my-4">
+    <%= f.label :email, class: "form-label"%><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "form-control"%>
+  </div>
+
+  <div class="field my-4">
+    <%= f.label :password, class: "form-label"%><br />
+    <%= f.password_field :password, class: "form-control", autocomplete: "current-password" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field my-4">
+      <%= f.check_box :remember_me , class: "form-check-input"%>
+      <%= f.label :remember_me, class: "form-check-label" %>
+    </div>
+  <% end %>
+
+  <div class="actions my-4">
+    <%= f.submit "Log in", class: "btn btn-primary"%>
+  </div>
+
+アカウントを作成 <%= link_to "こちら", new_user_registration_path %>
+
+パスワードを忘れた方 <%= link_to "こちら", new_user_password_path %>
+
+<% end %>
+
+

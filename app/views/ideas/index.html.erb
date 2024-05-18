@@ -1,0 +1,25 @@
+<!-- 部分テンプレート　一覧画面などでもちいる-->
+
+<h1>Ideas</h1>
+
+<div id="ideas">
+  <% @ideas.in_groups_of(6, false) do |idea_group| %>
+
+  <div class="row">
+
+    <% idea_group.each do |idea| %>
+
+      <div class="col-md-2 my-2">
+
+        <%= link_to idea do %>
+          <%= image_tag(idea.picture_url(:thumb), width: '100%') if idea.picture.present? %>
+        <% end %>
+
+      </div>
+    <% end %>
+  </div>
+
+
+
+  <% end %>
+</div>

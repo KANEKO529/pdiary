@@ -1,0 +1,10 @@
+<!--new投稿画面 -->
+<h1>New idea</h1>
+<!-- #>>> 部分テンプレートの呼び出し _form.html.erb -->
+<%= render "form", idea: @idea %>
+
+<br>
+
+<div>
+  <%= link_to "Back to ideas", ideas_path %>
+</div>
